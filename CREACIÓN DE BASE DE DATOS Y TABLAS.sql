@@ -13,8 +13,8 @@ create table CLIENTE (
 go
 create table MEMBRESIA (
    ID_MEMBRESIA             int                  not null,
-   FECHA_EXPEDICION     datetime        null,
-   FECHA_EXPIRACION     datetime        null,
+   FECHA_EXPEDICION     varchar(50)        null,
+   FECHA_EXPIRACION     varchar(50)       null,
    constraint PK_MEMBRESIA primary key (ID_MEMBRESIA)
 )
 go
@@ -22,11 +22,11 @@ create table PELICULA (
    ID_PELICULA          int                  not null,
    TITULO_PELICULA         varchar(50)          null,
    PAIS_PELICULA              varchar(30)          null,
-AÑO_PELICULA              int          null,
+AÃ‘O_PELICULA              int          null,
 GENERO_PELICULA              varchar(20)          null,
 IDIOMA_PELICULA              varchar(20)          null,
    PRECIO_PELICULA   numeric(5,2)         null,
-   FECHA_ULTIMOALQUILER   datetime             null,
+   FECHA_ULTIMOALQUILER   varchar(50)             null,
    constraint PK_PELICULA primary key (ID_PELICULA)
 )
 go
@@ -34,8 +34,8 @@ create table ALQUILER_PELICULA (
    ID_PELICULA          int                  not null,
    ID_CLIENTE            int                  not null,
    ID_ALQUILER_PELICULA           int                  not null,
-   FECHAENTREGA_PELICULA  datetime     null,
-   FECHASALIDA_PELICULA  datetime      null,
+   FECHAENTREGA_PELICULA  varchar(50)    null,
+   FECHASALIDA_PELICULA  varchar(50)    null,
    constraint PK_ALQUILER_PELICULA primary key (ID_PELICULA, ID_CLIENTE,
  ID_ALQUILER_PELICULA)
 )
